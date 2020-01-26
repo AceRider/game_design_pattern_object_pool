@@ -6,6 +6,14 @@ public class Move : MonoBehaviour
 {
     public Vector3 velocity;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("asteroid"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
